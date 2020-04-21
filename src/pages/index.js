@@ -2,18 +2,20 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import View from "../components/view"
+import Graph from "../components/graph"
 import { isLoggedIn } from "../services/auth"
 
 const Index = () => {
   return (
     <Layout>
-      <View title="Simple Graph">
+      <View title="Graph Page">
         {isLoggedIn() ? (
-          <p>Graph here</p>
+          <Graph />
         ) : (
           <div>
             <p>
-              Using the graphing library, D3, a simple graph is rendered here.
+              Using the graphing library, Recharts, a simple graph is rendered
+              here.
             </p>
             <p>
               To view the it, kindly

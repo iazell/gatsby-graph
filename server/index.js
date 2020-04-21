@@ -5,6 +5,7 @@ const bodyParser = require("body-parser")
 
 const auth = require("./routes/auth")
 const user = require("./routes/user")
+const graph = require("./routes/graph")
 
 const app = express()
 
@@ -22,6 +23,8 @@ app.use(cors())
 app.use("/auth", auth)
 
 app.use("/user", user)
+
+app.use("/graph", graph)
 
 app.use(express.static("public"))
 
