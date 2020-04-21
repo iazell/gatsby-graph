@@ -10,6 +10,7 @@ const IndexPage = () => (
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Graph app</p>
+    {` `}
     <Link to="/login/">Login</Link>
   </Layout>
 )

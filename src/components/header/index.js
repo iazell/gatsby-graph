@@ -2,13 +2,13 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styles from "./header.module.css"
+import { isLoggedIn } from "../../services/auth"
 
 const Header = ({ siteTitle }) => (
   <header className={styles.header}>
     <div className={styles[`header__wrap`]}>
       <nav role="main" className={styles[`header__nav`]}>
         <Link to="/" className={styles[`header__link`]}>
-          {/* {isLoggedIn() ? "Graph" : "Home"} */}
           Home
         </Link>
         <Link to="/profile" className={styles[`header__link`]}>

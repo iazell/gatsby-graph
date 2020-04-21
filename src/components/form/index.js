@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styles from "./form.module.css"
 
-const Form = () => {
+const Form = ({ handleSubmit, handleUpdate }) => {
   const [submitting, setSubmitting] = useState(false)
 
   return (
@@ -10,6 +10,7 @@ const Form = () => {
       method="post"
       onSubmit={event => {
         setSubmitting(true)
+        handleSubmit(event)
       }}
     >
       <p className={styles[`form__instructions`]}>
@@ -20,7 +21,12 @@ const Form = () => {
       </p>
       <label className={styles[`form__label`]}>
         Username
-        <input className={styles[`form__input`]} type="text" name="username" />
+        <input
+          className={styles[`form__input`]}
+          type="text"
+          name="username"
+          onChange={handleUpdate}
+        />
       </label>
       <label className={styles[`form__label`]}>
         Password
@@ -28,6 +34,7 @@ const Form = () => {
           className={styles[`form__input`]}
           type="password"
           name="password"
+          onChange={handleUpdate}
         />
       </label>
       <input
