@@ -4,10 +4,10 @@
 
 .form__label {
   display: block;
-  font-size: 80%;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  letter-spacing: 0.125em;
+  font-weight: bold;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 

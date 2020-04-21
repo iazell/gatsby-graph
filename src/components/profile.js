@@ -7,10 +7,10 @@ const Profile = () => {
   const { name, email } = getCurrentUser()
 
   return (
-    <View title="Account">
+    <View title="Profile Page">
       {isLoggedIn() ? (
         <div>
-          <p>Welcome back to your profile, {name}!</p>
+          <p>Welcome back to your account, {name}!</p>
           <ul>
             <li>Name: {name}</li>
             <li>Email address: {email}</li>
