@@ -4,22 +4,23 @@ import { getUserInfo } from "./userApi"
 
 const isBrowser = typeof window !== `undefined`
 
-const getValueFromLocalStorage = value =>
+const getValueFromLocalStorage = (value) =>
   window.localStorage[value] ? JSON.parse(window.localStorage[value]) : {}
 
 const getUser = () => getValueFromLocalStorage("gatsbyUser")
 
 export const getAccessToken = () => getValueFromLocalStorage("accessToken")
 
-const setUser = user => (window.localStorage.gatsbyUser = JSON.stringify(user))
+const setUser = (user) =>
+  (window.localStorage.gatsbyUser = JSON.stringify(user))
 
-const setAccessToken = accessToken =>
+const setAccessToken = (accessToken) =>
   (window.localStorage.accessToken = accessToken)
 
 export const handleLogin = ({ username, password }) =>
-  login({ username, password }).then(link => window.location.replace(link)) // Link to redirect to Okta OpenID Connect
+  login({ username, password }).then((link) => window.location.replace(link))
 
-export const fetchUserInfo = accessToken => {
+export const fetchUserInfo = (accessToken) => {
   getUserInfo(accessToken)
     .then(({ data }) =>
       setUser({
@@ -28,8 +29,8 @@ export const fetchUserInfo = accessToken => {
         email: data.email,
       })
     )
-    .then(() => navigate(`/profile`))
-  setAccessToken(accessToken) // Save for later use
+    .then(() => navigate(`/app/profile`))
+  setAccessToken(accessToken)
 }
 
 export const isLoggedIn = () => {
@@ -42,7 +43,7 @@ export const isLoggedIn = () => {
 
 export const getCurrentUser = () => isBrowser && getUser()
 
-export const logout = callback => {
+export const logout = (callback) => {
   if (!isBrowser) return
 
   console.log(`Ensuring the \`gatsbyUser\` property exists.`)

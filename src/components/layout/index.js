@@ -1,18 +1,18 @@
 import React from "react"
-import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
 
 import Header from "../header"
+
+// Global styles and component-specific styles.
 import "./global.css"
+import styles from "./layout.module.css"
 
 const Layout = ({ children }) => (
   <div>
-    <Header siteTitle="Gatsby Graph" />
-    <main className={{ marginTtop: 0 }}>{children}</main>
+    <Helmet title="Gatsby Authentication and Graphing" />
+    <Header />
+    <main className={styles.main}>{children}</main>
   </div>
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout

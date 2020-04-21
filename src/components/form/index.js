@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import styles from "./form.module.css"
 
 const Form = ({ handleSubmit, handleUpdate }) => {
-  const [submitting, setSubmitting] = useState(false)
+  const [submitting, setSubmitting] = useState(false);
 
   return (
     <form
@@ -14,13 +14,13 @@ const Form = ({ handleSubmit, handleUpdate }) => {
       }}
     >
       <p className={styles[`form__instructions`]}>
-        Please login the admin credentials:
+      Please login the following demo credentials:
         <br />
-        <br /> username: <code>admin@admin.com</code>
-        <br /> password: <code>admin</code>
+        <br /> email: <code>jay.gatsby@gmail.com</code>
+        <br /> password: <code>pass</code>
       </p>
       <label className={styles[`form__label`]}>
-        Username
+        Email
         <input
           className={styles[`form__input`]}
           type="text"
@@ -37,12 +37,7 @@ const Form = ({ handleSubmit, handleUpdate }) => {
           onChange={handleUpdate}
         />
       </label>
-      <input
-        className={styles[`form__button`]}
-        type="submit"
-        value={submitting ? "Logging in..." : "Log In"}
-        disabled={submitting}
-      />
+      <input className={styles[`form__button`]} type="submit" value={submitting ? "Logging in..." : "Log In"} disabled={submitting} />
     </form>
   )
 }

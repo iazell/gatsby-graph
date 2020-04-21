@@ -4,7 +4,9 @@
 
 .form__label {
   display: block;
-  font-size: 67.5%;
+  font-size: 80%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   letter-spacing: 0.125em;
   text-transform: uppercase;
 }
@@ -20,10 +22,12 @@
 }
 
 .form__button {
-  background-color: rgb(53, 201, 201);
+  background-color: teal;
   border: 0;
   color: white;
   font-size: 1.25rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   font-weight: bold;
   margin-top: 0.5rem;
   padding: 0.25rem 1rem;
@@ -37,5 +41,5 @@
 .form__button:hover,
 .form__button:active,
 .form__button:focus {
-  background-color: color(#708308 lightness(-20%));
+  background-color: color(teal lightness(-20%));
 }

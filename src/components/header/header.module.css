@@ -6,7 +6,7 @@
   align-items: baseline;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin: 0 0 0 auto;
+  margin: 0 auto;
   max-width: 640px;
   padding: 1rem 0;
 }
@@ -19,13 +19,13 @@
 .header__nav {
   font-size: 1.25rem;
   margin-top: 0;
-  text-align: left;
+  text-align: right;
 }
 
 .header__link {
   color: white;
   font-weight: bold;
-  margin-right: 0.75rem;
+  margin-left: 0.75rem;
   margin-top: 0;
   padding: 0.25rem;
   text-decoration: none;

@@ -1,14 +1,13 @@
 import React from "react"
-
 import Layout from "../components/layout"
-import { Helmet } from "react-helmet"
+import View from "../components/view"
 
-const NotFoundPage = () => (
+const NotFound = () => (
   <Layout>
-    <Helmet title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <View title="404: Not Found">
+      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    </View>
   </Layout>
 )
 
-export default NotFoundPage
+export default NotFound

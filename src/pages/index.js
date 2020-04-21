@@ -1,18 +1,30 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import { Helmet } from "react-helmet"
+import View from "../components/view"
+import { isLoggedIn } from "../services/auth"
 
-const IndexPage = () => (
-  <Layout>
-    <Helmet title="Simple Authentication With Gatsby" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Graph app</p>
-    {` `}
-    <Link to="/login/">Login</Link>
-  </Layout>
-)
+const Index = () => {
+  return (
+    <Layout>
+      <View title="Simple Graph">
+        {isLoggedIn() ? (
+          <p>Graph here</p>
+        ) : (
+          <div>
+            <p>
+              Using the graphing library, D3, a simple graph is rendered here.
+            </p>
+            <p>
+              To view the it, kindly
+              {` `}
+              <Link to="/app/login">login</Link>.
+            </p>
+          </div>
+        )}
+      </View>
+    </Layout>
+  )
+}
 
-export default IndexPage
+export default Index
